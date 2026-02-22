@@ -20,33 +20,11 @@ The dataset contains 13 variables covering daily usage hours, sleep duration, me
 
 ---
 
-## Key Visual Insights
+## Key Correlations
 
-### 1. Addiction Score Distribution
-
-![Addiction Distribution](visualizations/02_addiction_distribution.png)
-
-Most students fall within the 6–8 addiction score range, indicating moderate-to-high addiction levels across the dataset.
-
----
-
-### 2. Addiction Score vs Sleep Hours
-
-![Addiction vs Sleep](visualizations/04_addiction_vs_sleep.png)
-
-There is a strong negative relationship between addiction score and sleep duration. Students with addiction scores above 7 typically sleep between 4–6 hours per night.
-
----
-
-### 3. Correlation Between Numerical Features
-
-![Correlation Heatmap](visualizations/08_correlation_heatmap.png)
-
-- Addiction Score vs Daily Usage: 0.83  
-- Addiction Score vs Sleep Hours: -0.76  
-- Addiction Score vs Mental Health: -0.95  
-
-These strong relationships explain the high predictive power of the regression models.
+- Addiction Score vs Daily Usage: 0.83 (strong positive)
+- Addiction Score vs Sleep Hours: -0.76 (strong negative)
+- Addiction Score vs Mental Health: -0.95 (very strong negative)
 
 ---
 
@@ -61,18 +39,37 @@ These strong relationships explain the high predictive power of the regression m
 
 ## Models Used
 
-### Linear Regression
+### 1. Linear Regression
 - R² Score: ~0.95  
-- Low Mean Absolute Error  
+- MAE: Low prediction error  
 - Strong linear relationship between features and addiction score  
 
-### K-Nearest Neighbors (KNN) Regression
+### 2. K-Nearest Neighbors (KNN) Regression
 - Optimal K: 3  
 - R² Score: ~0.94  
-- Mean Squared Error: ~0.12  
+- MSE: ~0.12  
+- Captures non-linear relationships effectively  
+
+---
+
+## Key Findings
+
+- Students with higher daily usage (4–6+ hours) show significantly higher addiction scores.
+- Higher addiction levels are associated with reduced sleep (4–6 hours range).
+- Mental health score shows a strong inverse relationship with addiction.
+- Students academically affected tend to have addiction scores between 7–8.
+
+---
+
+## Tools & Technologies
+
+- Python  
+- Pandas & NumPy  
+- Matplotlib & Seaborn  
+- Scikit-learn  
 
 ---
 
 ## Conclusion
 
-The models explain approximately 94–95% of the variance in addiction scores, demonstrating strong predictive relationships between daily usage, sleep duration, mental health, and social media addiction levels.
+The models explain approximately 94–95% of the variance in addiction scores, indicating strong predictive relationships between behavioral features and addiction levels. This project demonstrates structured EDA, preprocessing, regression modeling, and model comparison on real-world behavioral data.
